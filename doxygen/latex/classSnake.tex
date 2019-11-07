@@ -1,0 +1,328 @@
+\hypertarget{classSnake}{}\doxysection{Snake Class Reference}
+\label{classSnake}\index{Snake@{Snake}}
+
+
+IA que resolve o game snaze.  
+
+
+
+
+{\ttfamily \#include $<$snake.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSnake_af2b24903404b401eefb4aa9086bf2671}{Snake}} (char $\ast$grid, unsigned \&rows, unsigned \&columns, \mbox{\hyperlink{structPosition}{Position}} \&snake)
+\item 
+bool \mbox{\hyperlink{classSnake_a25efde9b586468b73262acced827280e}{find\+\_\+solution}} (\mbox{\hyperlink{structPosition}{Position}} \&snake, \mbox{\hyperlink{structPosition}{Position}} \&food)
+\item 
+unsigned \mbox{\hyperlink{classSnake_acd35a63f6f60d5616ba9f7bef3577004}{line\+Column\+Toindex}} (unsigned i, unsigned j)
+\item 
+unsigned \mbox{\hyperlink{classSnake_a92e1aca7f777b6b6d9457a27d0c9f12e}{find\+\_\+path}} (unsigned pst)
+\item 
+bool \mbox{\hyperlink{classSnake_aa82bd2b01cb52e2afb9af00aae0cb2c6}{check\+\_\+sides}} (\mbox{\hyperlink{structPosition}{Position}} \&snake)
+\item 
+void \mbox{\hyperlink{classSnake_ad45955166b42efcaca0f9864caee1c24}{render\+\_\+path}} (\mbox{\hyperlink{structPosition}{Position}} \&food, short mode)
+\item 
+\mbox{\hyperlink{structPosition}{Position}} \mbox{\hyperlink{classSnake_ad37d10ce98cc5cf82b0e0d11a616a230}{update\+\_\+position}} (\mbox{\hyperlink{structPosition}{Position}} \&snake, short next)
+\item 
+\mbox{\Hypertarget{classSnake_a9d5e58de60f0f99c365026d2d19421cf}\label{classSnake_a9d5e58de60f0f99c365026d2d19421cf}} 
+bool {\bfseries is\+The\+Body} (unsigned pst, std\+::queue$<$ \mbox{\hyperlink{structPosition}{Position}} $>$ \&snake\+\_\+body)
+\item 
+void \mbox{\hyperlink{classSnake_a0b8924ec016bbfb4c6ada7255cbcf31f}{reset}} (\mbox{\hyperlink{structPosition}{Position}} \&snake\+\_\+spawn, short mode)
+\item 
+void \mbox{\hyperlink{classSnake_aac5b04b28bc615a203eb6b3bbb29fca8}{update\+\_\+grid}} (char $\ast$new\+Grid, \mbox{\hyperlink{structPosition}{Position}} \&snake, unsigned \&rows, unsigned \&columns)
+\item 
+void \mbox{\hyperlink{classSnake_a2b4cd6fe6b26b20bea60c395b1a49a96}{update\+\_\+body}} (\mbox{\hyperlink{structPosition}{Position}} \&food)
+\item 
+void \mbox{\hyperlink{classSnake_a7f38a475e05fe94fac803417ac9108f1}{simulate\+\_\+snake}} (unsigned end\+\_\+pst)
+\item 
+bool \mbox{\hyperlink{classSnake_abb91ac51a607085defe42025585d749f}{is\+The\+Body}} (unsigned pst)
+\item 
+void \mbox{\hyperlink{classSnake_ac904d4e17740feee43c009b132d015d4}{clear\+\_\+path}} (\mbox{\hyperlink{structPosition}{Position}} \&food)
+\item 
+bool \mbox{\hyperlink{classSnake_a6b397c7b4effba2868d033982f7460c8}{checks\+\_\+body}} (unsigned pst)
+\item 
+void \mbox{\hyperlink{classSnake_a72ff96335cf6323ffb087de553b78269}{snake\+\_\+kamikaze}} (\mbox{\hyperlink{structPosition}{Position}} \&snake)
+\item 
+short \mbox{\hyperlink{classSnake_a203fb5a7df9366d85c460289194475b1}{checks\+\_\+free\+Path}} (\mbox{\hyperlink{structPosition}{Position}} \&snake)
+\item 
+std\+::queue$<$ unsigned $>$ \& \mbox{\hyperlink{classSnake_a57eb0a5c53d8beaf9e2e5c3027fabab5}{get\+\_\+snake\+Body}} ()
+\item 
+std\+::vector$<$ unsigned $>$ \& \mbox{\hyperlink{classSnake_aae6a958c834d43e4faa34375cd529162}{get\+\_\+shortest\+Path}} (\mbox{\hyperlink{structPosition}{Position}} \&food)
+\item 
+std\+::vector$<$ unsigned $>$ \& \mbox{\hyperlink{classSnake_a5ce586ee0e1baf8e9a7b31f73af76cb9}{get\+\_\+kamikaze\+Path}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+IA que resolve o game snaze. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSnake_af2b24903404b401eefb4aa9086bf2671}\label{classSnake_af2b24903404b401eefb4aa9086bf2671}} 
+\index{Snake@{Snake}!Snake@{Snake}}
+\index{Snake@{Snake}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{Snake()}{Snake()}}
+{\footnotesize\ttfamily Snake\+::\+Snake (\begin{DoxyParamCaption}\item[{char $\ast$}]{grid,  }\item[{unsigned \&}]{rows,  }\item[{unsigned \&}]{columns,  }\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{snake }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid} & = vetor que contem o grid do jogo \\
+\hline
+{\em rows} & = quantidade de linhas do grid \\
+\hline
+{\em columns} & = quantidade de colunas do grid \\
+\hline
+{\em snake} & = posicao inicial da snake no grid \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSnake_aa82bd2b01cb52e2afb9af00aae0cb2c6}\label{classSnake_aa82bd2b01cb52e2afb9af00aae0cb2c6}} 
+\index{Snake@{Snake}!check\_sides@{check\_sides}}
+\index{check\_sides@{check\_sides}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{check\_sides()}{check\_sides()}}
+{\footnotesize\ttfamily bool Snake\+::check\+\_\+sides (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{snake }\end{DoxyParamCaption})}
+
+verifica se a comida esta em um dos lados da snake. 
+\begin{DoxyParams}{Parameters}
+{\em snake} & = posicao da snake no grid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true = se um dos vizinhos da snake e a comida, false caso contrario. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSnake_a6b397c7b4effba2868d033982f7460c8}\label{classSnake_a6b397c7b4effba2868d033982f7460c8}} 
+\index{Snake@{Snake}!checks\_body@{checks\_body}}
+\index{checks\_body@{checks\_body}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{checks\_body()}{checks\_body()}}
+{\footnotesize\ttfamily bool Snake\+::checks\+\_\+body (\begin{DoxyParamCaption}\item[{unsigned}]{pst }\end{DoxyParamCaption})}
+
+verifica se a posicao passada esta ocupada pela snake 
+\begin{DoxyParams}{Parameters}
+{\em pst} & = posicao a ser testada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true caso a snake esteja na posicao, false caso contrario 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSnake_a203fb5a7df9366d85c460289194475b1}\label{classSnake_a203fb5a7df9366d85c460289194475b1}} 
+\index{Snake@{Snake}!checks\_freePath@{checks\_freePath}}
+\index{checks\_freePath@{checks\_freePath}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{checks\_freePath()}{checks\_freePath()}}
+{\footnotesize\ttfamily short Snake\+::checks\+\_\+free\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{snake }\end{DoxyParamCaption})}
+
+verifica qual dos lados da snake esta livre. 
+\begin{DoxyParams}{Parameters}
+{\em snake,posicao} & da snake no grid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 = tem um espaco livre acima da snake ~\newline
+ 2 = tem um espaco livre a direita da snake ~\newline
+ 3 = tem um espaco livre abaixo da snake ~\newline
+ 4 = tem um espaco livre a esquerda ~\newline
+ -\/1 = nao ha espacos livres ao redor da snake 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSnake_ac904d4e17740feee43c009b132d015d4}\label{classSnake_ac904d4e17740feee43c009b132d015d4}} 
+\index{Snake@{Snake}!clear\_path@{clear\_path}}
+\index{clear\_path@{clear\_path}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{clear\_path()}{clear\_path()}}
+{\footnotesize\ttfamily void Snake\+::clear\+\_\+path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{food }\end{DoxyParamCaption})}
+
+limpa o caminho feito pela snake ate a comida.(coloca espacoes em branco no caminho) 
+\begin{DoxyParams}{Parameters}
+{\em food} & = posicao da comida no grid \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSnake_a92e1aca7f777b6b6d9457a27d0c9f12e}\label{classSnake_a92e1aca7f777b6b6d9457a27d0c9f12e}} 
+\index{Snake@{Snake}!find\_path@{find\_path}}
+\index{find\_path@{find\_path}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{find\_path()}{find\_path()}}
+{\footnotesize\ttfamily unsigned Snake\+::find\+\_\+path (\begin{DoxyParamCaption}\item[{unsigned}]{pst }\end{DoxyParamCaption})}
+
+encontra qual e o atual caminho sendo analisado 
+\begin{DoxyParams}{Parameters}
+{\em pst} & = posicao atual da snake \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+posicao do caminho sendo analisado 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSnake_a25efde9b586468b73262acced827280e}\label{classSnake_a25efde9b586468b73262acced827280e}} 
+\index{Snake@{Snake}!find\_solution@{find\_solution}}
+\index{find\_solution@{find\_solution}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{find\_solution()}{find\_solution()}}
+{\footnotesize\ttfamily bool Snake\+::find\+\_\+solution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{snake,  }\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{food }\end{DoxyParamCaption})}
+
+encontra o menor caminho ate a comida. 
+\begin{DoxyParams}{Parameters}
+{\em snake} & = posicao da snake no grid \\
+\hline
+{\em food} & = posicao da comida no grid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se existir um caminho ate a comida, false caso contrario. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSnake_a5ce586ee0e1baf8e9a7b31f73af76cb9}\label{classSnake_a5ce586ee0e1baf8e9a7b31f73af76cb9}} 
+\index{Snake@{Snake}!get\_kamikazePath@{get\_kamikazePath}}
+\index{get\_kamikazePath@{get\_kamikazePath}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{get\_kamikazePath()}{get\_kamikazePath()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned $>$ \& Snake\+::get\+\_\+kamikaze\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+retorna o caminho que a snake vai fazer para bater. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSnake_aae6a958c834d43e4faa34375cd529162}\label{classSnake_aae6a958c834d43e4faa34375cd529162}} 
+\index{Snake@{Snake}!get\_shortestPath@{get\_shortestPath}}
+\index{get\_shortestPath@{get\_shortestPath}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{get\_shortestPath()}{get\_shortestPath()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned $>$ \& Snake\+::get\+\_\+shortest\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{food }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em sht\+\_\+path} & = indece do menor caminho \\
+\hline
+{\em food} & = posicao da comida no grid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+referencia para o vector que contem o menor caminho. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSnake_a57eb0a5c53d8beaf9e2e5c3027fabab5}\label{classSnake_a57eb0a5c53d8beaf9e2e5c3027fabab5}} 
+\index{Snake@{Snake}!get\_snakeBody@{get\_snakeBody}}
+\index{get\_snakeBody@{get\_snakeBody}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{get\_snakeBody()}{get\_snakeBody()}}
+{\footnotesize\ttfamily std\+::queue$<$ unsigned $>$ \& Snake\+::get\+\_\+snake\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+retorna uma reference para o corpo da snake 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSnake_abb91ac51a607085defe42025585d749f}\label{classSnake_abb91ac51a607085defe42025585d749f}} 
+\index{Snake@{Snake}!isTheBody@{isTheBody}}
+\index{isTheBody@{isTheBody}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{isTheBody()}{isTheBody()}}
+{\footnotesize\ttfamily bool Snake\+::is\+The\+Body (\begin{DoxyParamCaption}\item[{unsigned}]{pst }\end{DoxyParamCaption})}
+
+verifica se o corpo da snake esta no caminho sendo analisado. 
+\begin{DoxyParams}{Parameters}
+{\em pst} & = posicao para onde a snake vai. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSnake_acd35a63f6f60d5616ba9f7bef3577004}\label{classSnake_acd35a63f6f60d5616ba9f7bef3577004}} 
+\index{Snake@{Snake}!lineColumnToindex@{lineColumnToindex}}
+\index{lineColumnToindex@{lineColumnToindex}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{lineColumnToindex()}{lineColumnToindex()}}
+{\footnotesize\ttfamily unsigned Snake\+::line\+Column\+Toindex (\begin{DoxyParamCaption}\item[{unsigned}]{i,  }\item[{unsigned}]{j }\end{DoxyParamCaption})}
+
+Transforma um indice de matriz i e j em um unico indice para um vetor Usado quando os dados estao em uma matriz mas na memoria estao em um vetor 
+\begin{DoxyParams}{Parameters}
+{\em i} & = linha da matriz \\
+\hline
+{\em j} & = coluna da matriz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index = indice do elemento no vetor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSnake_ad45955166b42efcaca0f9864caee1c24}\label{classSnake_ad45955166b42efcaca0f9864caee1c24}} 
+\index{Snake@{Snake}!render\_path@{render\_path}}
+\index{render\_path@{render\_path}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{render\_path()}{render\_path()}}
+{\footnotesize\ttfamily void Snake\+::render\+\_\+path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{food,  }\item[{short}]{mode }\end{DoxyParamCaption})}
+
+marca o caminho ate a comida, usado para debugge. 
+\begin{DoxyParams}{Parameters}
+{\em food} & = posicao da comida no grid \\
+\hline
+{\em mode} & = tipo da marcacao \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSnake_a0b8924ec016bbfb4c6ada7255cbcf31f}\label{classSnake_a0b8924ec016bbfb4c6ada7255cbcf31f}} 
+\index{Snake@{Snake}!reset@{reset}}
+\index{reset@{reset}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Snake\+::reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{snake\+\_\+spawn,  }\item[{short}]{mode }\end{DoxyParamCaption})}
+
+reseta tudo para as configuracoes iniciais. 
+\begin{DoxyParams}{Parameters}
+{\em Snake\+\_\+spawn} & = posicao do spawn da snake. \\
+\hline
+{\em mode} & = modo de execucao. ~\newline
+ 0 = reseta o corpo da snake. ~\newline
+ 1 = reseta o corpo da snake e adiciona a cabeca no snake\+\_\+body. ~\newline
+ mode != 0 e 1, nao reseta o corpo da snake. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSnake_a7f38a475e05fe94fac803417ac9108f1}\label{classSnake_a7f38a475e05fe94fac803417ac9108f1}} 
+\index{Snake@{Snake}!simulate\_snake@{simulate\_snake}}
+\index{simulate\_snake@{simulate\_snake}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{simulate\_snake()}{simulate\_snake()}}
+{\footnotesize\ttfamily void Snake\+::simulate\+\_\+snake (\begin{DoxyParamCaption}\item[{unsigned}]{end\+\_\+pst }\end{DoxyParamCaption})}
+
+simula o movimento da snake 
+\begin{DoxyParams}{Parameters}
+{\em end\+\_\+pst} & = posicao final da snake no grid \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSnake_a72ff96335cf6323ffb087de553b78269}\label{classSnake_a72ff96335cf6323ffb087de553b78269}} 
+\index{Snake@{Snake}!snake\_kamikaze@{snake\_kamikaze}}
+\index{snake\_kamikaze@{snake\_kamikaze}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{snake\_kamikaze()}{snake\_kamikaze()}}
+{\footnotesize\ttfamily void Snake\+::snake\+\_\+kamikaze (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{snake }\end{DoxyParamCaption})}
+
+a snake se mata, faz o caminho necessario para a snake bater no muro. 
+\begin{DoxyParams}{Parameters}
+{\em snake} & = posicao da snake \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSnake_a2b4cd6fe6b26b20bea60c395b1a49a96}\label{classSnake_a2b4cd6fe6b26b20bea60c395b1a49a96}} 
+\index{Snake@{Snake}!update\_body@{update\_body}}
+\index{update\_body@{update\_body}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{update\_body()}{update\_body()}}
+{\footnotesize\ttfamily void Snake\+::update\+\_\+body (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{food }\end{DoxyParamCaption})}
+
+atualiza o tamanho do corpo da snake em 1 \mbox{\Hypertarget{classSnake_aac5b04b28bc615a203eb6b3bbb29fca8}\label{classSnake_aac5b04b28bc615a203eb6b3bbb29fca8}} 
+\index{Snake@{Snake}!update\_grid@{update\_grid}}
+\index{update\_grid@{update\_grid}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{update\_grid()}{update\_grid()}}
+{\footnotesize\ttfamily void Snake\+::update\+\_\+grid (\begin{DoxyParamCaption}\item[{char $\ast$}]{new\+Grid,  }\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{snake,  }\item[{unsigned \&}]{rows,  }\item[{unsigned \&}]{columns }\end{DoxyParamCaption})}
+
+atualiza para o proximo level 
+\begin{DoxyParams}{Parameters}
+{\em new\+Grind} & = ponteiro para o novo grid(level) \\
+\hline
+{\em snake} & = posicao da snake no novo grid \\
+\hline
+{\em rows} & = numero de linhas do grid do novo level \\
+\hline
+{\em columns} & = numero de colunas do grid do novo level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSnake_ad37d10ce98cc5cf82b0e0d11a616a230}\label{classSnake_ad37d10ce98cc5cf82b0e0d11a616a230}} 
+\index{Snake@{Snake}!update\_position@{update\_position}}
+\index{update\_position@{update\_position}!Snake@{Snake}}
+\doxysubsubsection{\texorpdfstring{update\_position()}{update\_position()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPosition}{Position}} Snake\+::update\+\_\+position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPosition}{Position}} \&}]{snake,  }\item[{short}]{next }\end{DoxyParamCaption})}
+
+atualiza a posicao da snake para um de seus vizinhos 
+\begin{DoxyParams}{Parameters}
+{\em snake} & = posicao da snake no grid \\
+\hline
+{\em next} & = proxima posicao da snake 0 = para cima ~\newline
+ 1 = para direita ~\newline
+ 2 = para baixo ~\newline
+ 3 = para a esquerda \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+posicao atualizada 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/abraao/\+Documentos/programing/\+L\+P1/snake/include/snake.\+h\item 
+/home/abraao/\+Documentos/programing/\+L\+P1/snake/src/snake.\+cpp\end{DoxyCompactItemize}

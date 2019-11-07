@@ -1,0 +1,205 @@
+        //Metodos para encontrar um caminho
+        bool find_any_solution(Position & snake, Position & food);
+        unsigned abs(int value);
+        bool wall_side(Position & snake, Position & food);
+
+/**
+ * find_any_solution
+ * encontra um caminho ate a comida.
+ * @param, snake = linha do grid onde esta a snake
+ * @param, food = coluna do grid onde esta a snake
+ * @return, true se existir um caminho ate a comida, caso contrario false.
+ */
+bool Snake::find_any_solution(Position & snake, Position & food)
+{
+    if(m_grid[lineColumnToindex(snake.i, snake.j)] == 'f') //Encontrou a comida
+    {
+        path.push(lineColumnToindex(snake.i, snake.j));
+        return true;
+    }
+
+    if(m_grid[lineColumnToindex(snake.i, snake.j)] == '#') //Encontrou a um muro
+    {
+        return false;
+    }
+
+   if((snake.i == food.i) and (wall_side(snake, food)))
+   {
+       //Move na vertical
+       //Move primeiro para direita ou esquerda
+        if(abs(food.j - (snake.j+1)) < abs(food.j - (snake.j-1)))
+        {
+            Position aux{snake.i, snake.j+1};
+
+            if(m_grid[lineColumnToindex(snake.i, snake.j+1)] != '#' and visited.count(lineColumnToindex(snake.i, snake.j+1)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+            aux.j -= 2;
+            if(m_grid[lineColumnToindex(snake.i, snake.j-1)] != '#' and visited.count(lineColumnToindex(snake.i, snake.j-1)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+        }else
+        {
+            Position aux{snake.i, snake.j-1};
+            if(m_grid[lineColumnToindex(snake.i, snake.j-1)] != '#' and visited.count(lineColumnToindex(snake.i, snake.j-1)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+            aux.j += 2;
+            if(m_grid[lineColumnToindex(snake.i, snake.j+1)] != '#' and visited.count(lineColumnToindex(snake.i, snake.j+1)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+        }
+   }else
+   {
+        //Move primeiro para baixo ou para cima.
+        if(abs(food.i - (snake.i+1)) < abs(food.i - (snake.i-1)))
+        {
+            Position aux{snake.i+1, snake.j};
+
+            if(m_grid[lineColumnToindex(snake.i+1, snake.j)] != '#' and visited.count(lineColumnToindex(snake.i+1, snake.j)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+            aux.i -= 2;
+            if(m_grid[lineColumnToindex(snake.i-1, snake.j)] != '#' and visited.count(lineColumnToindex(snake.i-1, snake.j)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+        }else
+        {
+            Position aux{snake.i-1, snake.j};
+            if(m_grid[lineColumnToindex(snake.i-1, snake.j)] != '#' and visited.count(lineColumnToindex(snake.i-1, snake.j)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+            aux.i += 2;
+            if(m_grid[lineColumnToindex(snake.i+1, snake.j)] != '#' and visited.count(lineColumnToindex(snake.i+1, snake.j)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+        }
+
+        //Move primeiro para direita ou esquerda
+        if(abs(food.j - (snake.j+1)) < abs(food.j - (snake.j-1)))
+        {
+            Position aux{snake.i, snake.j+1};
+
+            if(m_grid[lineColumnToindex(snake.i, snake.j+1)] != '#' and visited.count(lineColumnToindex(snake.i, snake.j+1)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+            aux.j -= 2;
+            if(m_grid[lineColumnToindex(snake.i, snake.j-1)] != '#' and visited.count(lineColumnToindex(snake.i, snake.j-1)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+        }else
+        {
+            Position aux{snake.i, snake.j-1};
+            if(m_grid[lineColumnToindex(snake.i, snake.j-1)] != '#' and visited.count(lineColumnToindex(snake.i, snake.j-1)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+            aux.j += 2;
+            if(m_grid[lineColumnToindex(snake.i, snake.j+1)] != '#' and visited.count(lineColumnToindex(snake.i, snake.j+1)) == 0)
+            {
+                visited.insert(lineColumnToindex(aux.i, aux.j));
+                if(find_solution(aux, food))
+                {
+                    path.push(lineColumnToindex(aux.i, aux.j));
+                    return true;
+                }
+            }
+        }
+   }
+   
+    return false;   
+}
+
+/**
+ * abs
+ * calcula o valor absluto de um numero inteiro
+ * @param value numero inteiro
+ * @return valor absoluto do numero inteiro passado
+ */
+unsigned Snake::abs(int value)
+{
+    if (value >= 0)
+    {
+        return value;
+    }else
+    {
+        return value * -1;
+    }    
+}
+
+bool Snake::wall_side(Position & snake, Position & food)
+{
+    if(snake.j < food.j)
+    {
+        return m_grid[lineColumnToindex(snake.i, snake.j+1)] != '#';
+    }else
+    {
+        return m_grid[lineColumnToindex(snake.i, snake.j-1)] != '#';
+    }
+    
+}

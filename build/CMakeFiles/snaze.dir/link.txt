@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11   CMakeFiles/snaze.dir/src/drive.cpp.o CMakeFiles/snaze.dir/src/snake.cpp.o CMakeFiles/snaze.dir/src/snake_game.cpp.o  -o snaze 

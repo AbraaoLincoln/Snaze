@@ -1,0 +1,67 @@
+
+        /*
+        if((m_grid[lineColumnToindex(position_aux.i-1, position_aux.j)] != '#') and (visited.count(lineColumnToindex(position_aux.i-1, position_aux.j)) == 0))
+        {
+            visited.insert(lineColumnToindex(position_aux.i-1, position_aux.j));
+            position_aux2 = position_aux;
+            position_aux2.i -= 1;
+            fila.push(position_aux2);
+            shortest_path[curent_path].push_back(lineColumnToindex(position_aux.i-1, position_aux.j));
+            count++;
+        }
+
+        if((m_grid[lineColumnToindex(position_aux.i, position_aux.j+1)] != '#') and (visited.count(lineColumnToindex(position_aux.i, position_aux.j+1)) == 0))
+        {
+            visited.insert(lineColumnToindex(position_aux.i, position_aux.j+1));
+            position_aux2 = position_aux;
+            position_aux2.j += 1;
+            fila.push(position_aux2);
+            if(count > 0)
+            {
+                std::vector<unsigned> aux_vector{shortest_path[curent_path]};
+                aux_vector[aux_vector.size()-1] = lineColumnToindex(position_aux.i, position_aux.j+1);
+                shortest_path.push_back(aux_vector);
+            }else
+            {
+                shortest_path[curent_path].push_back(lineColumnToindex(position_aux.i, position_aux.j+1));
+            }
+            
+            count++;
+        }
+
+        if((m_grid[lineColumnToindex(position_aux.i+1, position_aux.j)] != '#') and (visited.count(lineColumnToindex(position_aux.i+1, position_aux.j)) == 0))
+        {
+            visited.insert(lineColumnToindex(position_aux.i+1, position_aux.j));
+            position_aux2 = position_aux;
+            position_aux2.i += 1;
+            fila.push(position_aux2);
+            if(count > 0)
+            {
+                std::vector<unsigned> aux_vector{shortest_path[curent_path]};
+                aux_vector[aux_vector.size()-1] = lineColumnToindex(position_aux.i+1, position_aux.j);
+                shortest_path.push_back(aux_vector);
+            }else
+            {
+                shortest_path[curent_path].push_back(lineColumnToindex(position_aux.i+1, position_aux.j));
+            }
+            
+            count++;
+        }
+
+        if((m_grid[lineColumnToindex(position_aux.i, position_aux.j-1)] != '#') and (visited.count(lineColumnToindex(position_aux.i, position_aux.j-1)) == 0))
+        {
+            visited.insert(lineColumnToindex(position_aux.i, position_aux.j-1));
+            position_aux2 = position_aux;
+            position_aux2.j -= 1;
+            fila.push(position_aux2);
+            if(count > 0)
+            {
+                std::vector<unsigned> aux_vector{shortest_path[curent_path]};
+                aux_vector[aux_vector.size()-1] = lineColumnToindex(position_aux.i, position_aux.j-1);
+                shortest_path.push_back(aux_vector);
+            }else
+            {
+                shortest_path[curent_path].push_back(lineColumnToindex(position_aux.i, position_aux.j-1));
+            }
+        }
+        */

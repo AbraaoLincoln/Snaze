@@ -1,0 +1,45 @@
+/*
+    //Verifica os vizinhos em sentido horario.
+    //Coloca os vizinhos da posicao atual em visitados
+    //Cima
+    if((m_grid[lineColumnToindex(snake.i-1, snake.j)] == ' ') or (m_grid[lineColumnToindex(snake.i-1, snake.j)] == 'f'))
+    {
+        visited.insert(lineColumnToindex(snake.i-1, snake.j));
+        position_aux.i -= 1;
+        fila.push(position_aux);
+        shortest_path[0].push_back(lineColumnToindex(snake.i-1, snake.j));
+    }
+    //Direita
+    if((m_grid[lineColumnToindex(snake.i, snake.j+1)] == ' ') or (m_grid[lineColumnToindex(snake.i, snake.j+1)] == 'f'))
+    {
+        visited.insert(lineColumnToindex(snake.i, snake.j+1));
+        position_aux = snake;
+        position_aux.j += 1;
+        fila.push(position_aux);
+        shortest_path[1].push_back(lineColumnToindex(snake.i, snake.j+1));
+    }
+    //Baixo
+    if((m_grid[lineColumnToindex(snake.i+1, snake.j)] == ' ') or (m_grid[lineColumnToindex(snake.i+1, snake.j)] == 'f'))
+    {
+        visited.insert(lineColumnToindex(snake.i+1, snake.j));
+        position_aux = snake;
+        position_aux.i += 1;
+        fila.push(position_aux);
+        shortest_path[2].push_back(lineColumnToindex(snake.i+1, snake.j));
+    }
+    //Esquerda
+    if((m_grid[lineColumnToindex(snake.i, snake.j-1)] == ' ') or (m_grid[lineColumnToindex(snake.i, snake.j-1)] == 'f'))
+    {
+        visited.insert(lineColumnToindex(snake.i, snake.j-1));
+        position_aux = snake;
+        position_aux.j -= 1;
+        fila.push(position_aux);
+        shortest_path[3].push_back(lineColumnToindex(snake.i, snake.j-1));
+    }
+
+    if(check_sides(snake)) 
+    { 
+        render_path(food);
+        return true; 
+    }
+    */

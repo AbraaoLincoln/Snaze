@@ -1,0 +1,3 @@
+/home/abraao/Documentos/programing/LP1/snake/build/CMakeFiles/rebuild_cache.dir
+/home/abraao/Documentos/programing/LP1/snake/build/CMakeFiles/snaze.dir
+/home/abraao/Documentos/programing/LP1/snake/build/CMakeFiles/edit_cache.dir
