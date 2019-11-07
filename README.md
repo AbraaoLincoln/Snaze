@@ -1,5 +1,3 @@
-Desenvolvido por: Abraão Lincol Rosendo Cavalcante
-
 # INTRO
 
 IA desenvolvida para resolver o jogo snaze.
